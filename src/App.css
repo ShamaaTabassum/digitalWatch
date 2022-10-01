@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+@import url("//db.onlinewebfonts.com/c/bdb331a84d748f28a070901d0421af38?family=BunkenTechSansSCWideW01-Bd");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --dark-grey: #0E0F0F;
+  --light-grey: #151615;
+  --red: #F9283A;
+  --yellow: #FEC30B;
+  --cyan: #07E1F9;
+  --white: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--dark-grey);
+  /* font-family: BunkenTechSansSCWideW01-Bd; */
+  /* font-family: 'Roboto', sans-serif; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 550px;
+  height: 250px;
+  margin: 0 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--light-grey);
+  border: 6px solid var(--cyan);
+  border-radius: 45px;
+  color: var(--white);
+}
+
+.timeBox {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.circles {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circles .circle-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transform: rotate(270deg);
 }
 
-.App-link {
-  color: #61dafb;
+.circle-content svg {
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.circle-content:nth-child(1) .dots,
+.circle-content:nth-child(1) svg {
+  width: 60%;
+  height: 60%;
+}
+
+.circle-content:nth-child(2) .dots,
+.circle-content:nth-child(2) svg {
+  width: 80%;
+  height: 80%;
+}
+
+.circle-content:nth-child(3) .dots,
+.circle-content:nth-child(3) svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circle-content svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--color);
+  stroke-width: 3px;
+  transform: translate(5px, 5px);
+}
+
+.circle-content:nth-child(1) svg circle {
+  stroke-dasharray: 260;
+}
+
+.circle-content:nth-child(2) svg circle {
+  stroke-dasharray: 350;
+}
+
+.circle-content:nth-child(3) svg circle {
+  stroke-dasharray: 440;
+}
+
+.dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.dots::before {
+  content: '';
+  position: absolute;
+  right: -2px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--color),
+    0 0 40px var(--color),
+    0 0 60px var(--color);
+}
+
+.time {
+  display: flex;
+  font-family: BunkenTechSansSCWideW01-Bd;
+  font-size: 1em;
+}
+
+.timeContent {
+  font-size: 2.5em;
+}
+
+.hours {
+  color: var(--red);
+}
+
+.minutes {
+  color: var(--yellow);
+}
+
+.seconds {
+  color: var(--cyan);
+}
+
+.time .ap {
+  padding: 0 5px;
+}
+
+.dateContent {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
 }
